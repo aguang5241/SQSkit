@@ -91,7 +91,7 @@ def trim():
 
     # Write the final B matrices to sqscell.out file
     with open(f'{SQSCELL[:-4]}_trimmed.out', 'w') as f:
-        f.write(f'{N_OUTPUT}\n')
+        f.write(f'{N_OUTPUT}\n\n')
         for B in B_list:
             for row in B:
                 f.write(' '.join([f'{x:.6f}' for x in row]) + '\n')
