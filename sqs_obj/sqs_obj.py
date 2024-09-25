@@ -13,7 +13,7 @@ def get_obj(log_file):
         if 'Objective_function=' in line:
             obj_values.append(float(line.split('=')[-1].strip()))
     
-    with open('sqs_obj.dat', 'w') as f:
+    with open('sqs_obj/sqs_obj.dat', 'w') as f:
         for obj in obj_values:
             f.write(f'{obj}\n')
 
@@ -43,9 +43,9 @@ def plot_obj(obj_values):
     ax.xaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     plt.tight_layout()
-    plt.savefig('sqs_obj.png', dpi=300, bbox_inches='tight')
+    plt.savefig('sqs_obj/sqs_obj.png', dpi=300, bbox_inches='tight')
 
 if __name__ == '__main__':
-    log_file = 'mcsqs.log'
+    log_file = 'sqs_obj/mcsqs.log'
     obj_values = get_obj(log_file)
     plot_obj(obj_values)
